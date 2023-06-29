@@ -8,6 +8,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import WebBuilder from "./components/WebBuilder";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
         <Route path="/Signup" element={<SignUp />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Editor" element={<WebBuilder />} />
       </Routes>
       </AuthProvider>
     </BrowserRouter>
