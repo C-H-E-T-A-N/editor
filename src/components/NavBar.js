@@ -10,7 +10,7 @@ export default function NavBar() {
     <>
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand" to="/Create">
             DarkTech
           </Link>
           <button
@@ -26,11 +26,6 @@ export default function NavBar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-              </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/Create">
                 Create
@@ -54,18 +49,6 @@ export default function NavBar() {
                   </Link>
                 </li>
               )}
-            </ul>
-            <ul className="navbar-nav mb-2 mb-lg-0 float-end text-light">
-              <li>
-                <Link className="nav-link" to="/About">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link className="nav-link" to="/Contact">
-                  Contact Us
-                </Link>
-              </li>
             </ul>
             <div>
               {user ? (
