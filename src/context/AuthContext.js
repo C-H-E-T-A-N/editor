@@ -7,6 +7,9 @@ const AuthContext = createContext();
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
+  const [pages, setPages] = useState([]);
+  // const [html_content, setHtmlContent] = useState(null)
+  // const [css_content, setCssContent] = useState(null)
   let [user, setUser] = useState(() =>
     localStorage.getItem("authTokens")
       ? jwtDecode(localStorage.getItem("authTokens"))
@@ -43,7 +46,7 @@ export const AuthProvider = ({ children }) => {
       setUser(jwtDecode(data.access));
       const userEmail = jwtDecode(data.access).email;
       localStorage.setItem("email", userEmail);
-      navigate("/Dashboard");
+      navigate("/Create");
     }
   };
 
@@ -115,7 +118,7 @@ export const AuthProvider = ({ children }) => {
       alert("Enter New Password Again");
     }
   };
-
+ 
   let logoutUser = (e) => {
     e.preventDefault();
     localStorage.removeItem("authTokens");
@@ -151,6 +154,22 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+
+  const getAllPages = async () => {
+    const url = `http://127.0.0.1:8000/webpages/viewallpages/${localStorage.getItem(
+      "email"
+    )}/`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+    // setID(data.id)
+    // setTitle(data.title);
+    // setHtmlContent(data.html_content);
+    // setCssContent(data.css_content);
+    setPages(data.pages);
+  };
+
+
   let contextData = {
     user: user,
     authTokens: authTokens,
@@ -158,6 +177,10 @@ export const AuthProvider = ({ children }) => {
     logoutUser: logoutUser,
     signinUser: signinUser,
     handleModifyPassword: handleModifyPassword,
+    getAllPages: getAllPages,
+    pages: pages,
+    // html_content: html_content,
+    // css_content: css_content,
   };
 
   useEffect(() => {
