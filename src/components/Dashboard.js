@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Dashboard({ onEditPage }) {
   const handleEdit = (pageData) => {
     onEditPage(pageData);
-    navigate("/Create");
+    navigate("/EditPage");
   };
-  
+
   const navigate = useNavigate();
   const { user, pages, getAllPages } = useContext(AuthContext);
 
@@ -89,7 +89,6 @@ export default function Dashboard({ onEditPage }) {
                   >
                     Edit
                   </button>
-                  {/* <PageItem pagenumber={index+1} pageid={pages[index].id} title={pages[index].title} html_content={pages[index].html_content} css_content={pages[index].css_content} /> */}
                 </div>
               </div>
             </div>

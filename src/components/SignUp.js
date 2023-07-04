@@ -98,7 +98,7 @@ export default function SignUp() {
                       htmlFor="form2Example31"
                     >
                       {/* Add link to Terms and conditions and Privacy policy */}
-                      I accept{" "}
+                      I accept
                       <a href="#">terms & conditions and Privacy Policy</a>
                     </label>
                   </div>
