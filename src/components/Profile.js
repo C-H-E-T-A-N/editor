@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 export default function Profile() {
+  const { logoutUser } = useContext(AuthContext);
   const [isUpdate, setIsUpdate] = useState(true);
 
   // States to display details in the profile
@@ -116,6 +118,12 @@ export default function Profile() {
                 onClick={handleDelete}
               >
                 Delete Profile
+              </button>
+              <button
+                className="btn btn-dark float-end my-2 mx-2"
+                onClick={logoutUser}
+              >
+                Logout
               </button>
             </div>
           </div>
