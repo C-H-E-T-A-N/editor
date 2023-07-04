@@ -4,13 +4,13 @@ import AuthContext from "../context/AuthContext";
 
 export default function NavBar() {
   const navigate = useNavigate();
-  let { user, logoutUser } = useContext(AuthContext);
+  let { user } = useContext(AuthContext);
 
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/Create">
+          <Link className="navbar-brand" to="/NewPage">
             DarkTech
           </Link>
           <button
@@ -27,8 +27,8 @@ export default function NavBar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/Create">
-                Create
+                <Link className="nav-link" to="/NewPage">
+                  Create
                 </Link>
               </li>
 
@@ -57,12 +57,6 @@ export default function NavBar() {
                   <Link className="mx-1" to="/Profile">
                     Hello {user.username}!
                   </Link>
-                  <button
-                    className="btn btn-outline-primary mx-1"
-                    onClick={logoutUser}
-                  >
-                    Logout
-                  </button>
                 </>
               ) : (
                 <>
