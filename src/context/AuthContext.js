@@ -18,7 +18,6 @@ export const AuthProvider = ({ children }) => {
       ? JSON.parse(localStorage.getItem("authTokens"))
       : null
   );
-  let [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   let loginUser = async (e) => {
@@ -145,10 +144,6 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("authTokens", JSON.stringify(data));
     } else {
       logoutUser();
-    }
-
-    if (loading) {
-      setLoading(false);
     }
   };
 
