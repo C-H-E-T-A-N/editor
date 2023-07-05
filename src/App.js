@@ -14,7 +14,6 @@ import NewEditor from "./components/NewEditor";
 
 
 function App() {
-
   const [selectedPage, setSelectedPage] = useState("");
 
   const handleEditPage = (pageData) => {
@@ -42,7 +41,10 @@ function App() {
             <Route path="/Profile" element={<Profile />} />
             <Route path="/PwdChange" element={<PasswordChange />} />
             <Route path="/NewPage" element={<NewEditor />} />
-            <Route path="/EditPage" element={<WebBuilder {...selectedPage} />} />
+            <Route
+              path="/EditPage"
+              element={<WebBuilder {...selectedPage} />}
+            />
           </Routes>
           
         </AuthProvider>

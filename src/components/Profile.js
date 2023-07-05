@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import '../Styles/Profile.css';
+
 export default function Profile() {
+  const { logoutUser } = useContext(AuthContext);
   const [isUpdate, setIsUpdate] = useState(true);
   const {logoutUser} = useContext(AuthContext);
   // States to display details in the profile
@@ -140,9 +142,6 @@ export default function Profile() {
               </button>
               </div>
               </div>
-
-             
-              
             </div>
           </div>
         ) : (

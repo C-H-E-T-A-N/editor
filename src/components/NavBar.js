@@ -61,12 +61,6 @@ export default function NavBar() {
                   <Link className="mx-1" to="/Profile" style={{textDecoration:"none", color:"#fff",fontSize:"1.3rem"}}>
                   <Icon style={{width:"30px",}}/> {user.username}
                   </Link>
-                  {/* <button
-                    className="logout"
-                    onClick={logoutUser}
-                  >
-                    Log out
-                  </button> */}
                 </>
               ) : (
                 <>
