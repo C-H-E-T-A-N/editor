@@ -1,0 +1,40 @@
+.btn-signup
+{
+  padding: 7px 60px;
+  font-size: 0.3 rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color:#00796b;
+  color: #fff;
+  filter: brightness(90%);
+  border: 1px solid #fff;
+  font-weight: 400;
+  cursor:pointer;
+  text-decoration: none;
+}
+
+.btn-signup:hover
+{
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid black;
+  color: black;
+  transition: 0.3s;
+}
+
+.card-heading
+{
+    text-align: center;
+    color: #004d40;
+    filter: brightness(90%);
+    padding: 0.5rem 0 1rem 0;
+}
+
+.card{
+    background: #000;
+    border: 1px solid #eee;
+    /* text-align: center; */
+    color: #eee;
+    padding: 1rem;
+}
+

@@ -1,0 +1,86 @@
+.card{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background: #afe1ce;
+    border: 1px solid #eee;
+    /* text-align: center; */
+    color: black;
+    padding: 1rem;
+}
+.profile-heading
+{
+    text-shadow: 1px 1px;
+   
+    color: #004d40;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+.btn-profile
+{
+    display: flex;
+    justify-content: space-around;
+}
+.btns-utils
+{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-1
+{
+    display: flex;
+   
+}
+.btn-2
+{
+    display: flex;
+    padding:"0 30px";
+   
+}
+.btn-1 button
+{
+    margin: 0px 5px;
+   
+}
+.btn-2 button
+{
+    margin: 0px 3px;
+}
+.btn-width-1
+{
+    width: 40%;
+} 
+.heading-edit
+{
+   
+   
+    color: black;
+    
+}
+
+@media screen and (max-width:920px)
+{
+
+    .btns-utils
+{
+   flex-direction: column;
+}
+   .btn-1
+{
+    flex-direction: column;
+    padding: 0;
+   
+    
+}
+   .btn-2
+{
+    flex-direction: column;
+    padding: 0;
+    
+}
+   .btn-1 button
+{
+    margin: 0;
+}
+   .btn-2 button
+{
+    margin: 0;
+}
+}

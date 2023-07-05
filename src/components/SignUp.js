@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-
+import '../Styles/Signup.css';
 export default function SignUp() {
   let { signinUser } = useContext(AuthContext);
 
@@ -9,13 +9,13 @@ export default function SignUp() {
     <>
       <div
         className="container mx-auto d-flex justify-content-center align-items-center col-xs-4 col-md-6 col-xl-4"
-        style={{ height: "93vh" }}
+       
       >
-        <div style={{ width: "22rem" }}>
-          <div className="card-body">
-            <h4 className="card-title text-center mb-4">Signup</h4>
+        <div style={{ width: "30rem" }}>
+          <div className="card">
+            <h2 className="card-heading">Sign Up</h2>
             <form onSubmit={signinUser}>
-              <div className="mb-3">
+              <div className="mb-1">
                 <label htmlFor="user_name" className="form-label">
                   Username
                 </label>
@@ -26,10 +26,11 @@ export default function SignUp() {
                   name="user_name"
                   aria-describedby="UserNameHelp"
                   autoComplete="username"
+                  
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-1">
                 <label htmlFor="user_contact" className="form-label">
                   Contact No.
                 </label>
@@ -43,7 +44,7 @@ export default function SignUp() {
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-1">
                 <label htmlFor="InputEmail1" className="form-label">
                   Email address
                 </label>
@@ -57,7 +58,7 @@ export default function SignUp() {
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-1">
                 <label htmlFor="InputPassword1" className="form-label">
                   Password
                 </label>
@@ -70,7 +71,7 @@ export default function SignUp() {
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-1">
                 <label htmlFor="InputConfirmPassword1" className="form-label">
                   Confirm Password
                 </label>
@@ -83,7 +84,7 @@ export default function SignUp() {
                 />
               </div>
 
-              <div className="row mb-4">
+              <div className="row mb-3">
                 <div className="col d-flex justify-content-center">
                   <div className="form-check">
                     <input
@@ -108,7 +109,7 @@ export default function SignUp() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="btn btn-primary btn-block mb-3"
+                  className="btn-signup mb-2"
                 >
                   Sign in
                 </button>

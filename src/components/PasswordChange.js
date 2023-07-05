@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-
+import '../Styles/Profile.css';
 export default function PasswordChange() {
   let { handleModifyPassword } = useContext(AuthContext);
 
   return (
     <>
       <div className="container">
-        <h2 className="text-center">Change Password</h2>
+        <h1 className="text-center profile-heading mb-5"  style={{textAlign:"center", padding:"1rem 0 1rem 0", filter: "brightness(90%)"}}>Change Password</h1>
         <form className="my-2" onSubmit={handleModifyPassword}>
           <div className="container">
             <div className="mb-3">
-              <label htmlFor="password" className="form-label">
+              <label style={{fontWeight:"bold", color:"black"}} htmlFor="password" className="form-label">
                 Old Password
               </label>
               <input
@@ -28,7 +28,7 @@ export default function PasswordChange() {
 
           <div className="container">
             <div className="mb-3">
-              <label htmlFor="new_password" className="form-label">
+              <label style={{fontWeight:"bold", color:"black"}} htmlFor="new_password" className="form-label">
                 New Password
               </label>
               <input
@@ -44,7 +44,7 @@ export default function PasswordChange() {
 
           <div className="container">
             <div className="mb-3">
-              <label htmlFor="confirm_new_password" className="form-label">
+              <label style={{fontWeight:"bold", color:"black"}} htmlFor="confirm_new_password" className="form-label">
                 Confirm New Password
               </label>
               <input
@@ -57,17 +57,24 @@ export default function PasswordChange() {
               />
             </div>
           </div>
-
+          
+          <div style={{
+            display:"flex",
+            justifyContent:"space-between"
+          }}>
           <button
             type="submit"
-            className="btn btn-dark d-grid gap-2 col-3 mx-auto my-4"
+            className="btn btn-dark  mx-auto my-4"
           >
             Submit
           </button>
 
-          <Link className="btn btn-dark" to="/Profile">
+          <Link className="btn btn-dark mx-auto my-4" to="/Profile">
             Cancel
           </Link>
+
+          </div>
+          
         </form>
       </div>
     </>

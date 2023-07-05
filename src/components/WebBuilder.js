@@ -11,7 +11,7 @@ import toolTip from "grapesjs-tooltip";
 import customCode from "grapesjs-custom-code";
 import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import '../Styles/WebBuilder.css';
 function WebBuilder(props) {
   const [addtitle, setAddTitle] = useState("");
   const navigate = useNavigate();

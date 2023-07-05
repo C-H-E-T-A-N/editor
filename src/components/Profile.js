@@ -2,11 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import '../Styles/Profile.css';
 
 export default function Profile() {
   const { logoutUser } = useContext(AuthContext);
   const [isUpdate, setIsUpdate] = useState(true);
-
+  const {logoutUser} = useContext(AuthContext);
   // States to display details in the profile
   const [user_name, setUsername] = useState("");
   const [user_contact, setContact] = useState("");
@@ -99,41 +100,57 @@ export default function Profile() {
       <div className="container">
         {isUpdate ? (
           <div className=" container">
-            <h2 className="text-center">Profile</h2>
-            <div className=" container">
-              <h5>Username</h5>
-              <p>{user_name}</p>
-              <h5>Contact No.</h5>
-              <p>{user_contact}</p>
-              <h5>Email Address</h5>
-              <p>{email}</p>
-              <button className="btn btn-dark my-2" onClick={handleUpdate}>
+            <h1 className="mb-5 profile-heading" style={{textAlign:"center", padding:"1rem 0 1rem 0", filter: "brightness(90%)"}}>Profile</h1>
+            <div className=" card container">
+
+              <h5>Username-</h5>
+              <h4  className="mb-4" style={{color: "#004d40", filter: "brightness(90%)"}}>{user_name}</h4>
+
+
+              <h5>Contact No.-</h5>
+              <h4  className="mb-4" style={{color: "#004d40", filter: "brightness(90%)"}}>{user_contact}</h4>
+
+
+              <h5>Email Address-</h5>
+              <h4  className="mb-4" style={{color: "#004d40", filter: "brightness(90%)"}}>{email}</h4>
+
+
+              <div className="btns-utils">
+              <div className="btn-1">
+               <button className="btn   my-2 "  onClick={handleUpdate}>
                 Update Profile
               </button>
-              <Link to="/PwdChange" className="btn btn-dark my-2 mx-2">
+              <Link to="/PwdChange"  className="btn  my-2">
                 Change Password
               </Link>
-              <button
-                className="btn btn-dark float-end my-2"
+               </div>
+             
+
+
+              <div className="btn-2" >
+              <button 
+                className="btn   my-2"
                 onClick={handleDelete}
               >
                 Delete Profile
               </button>
-              <button
-                className="btn btn-dark float-end my-2 mx-2"
+              <button 
+                className="btn  my-2 "
                 onClick={logoutUser}
               >
-                Logout
+                Log Out
               </button>
+              </div>
+              </div>
             </div>
           </div>
         ) : (
           <div>
-            <h2 className="text-center">Edit Profile</h2>
+            <h1 className="text-center profile-heading mb-5" style={{ padding:"1rem 0 1rem 0", filter: "brightness(90%)"}}>Edit Profile</h1>
             <form className="my-2" onSubmit={handleModify}>
               <div className="container">
-                <div className="mb-3">
-                  <label htmlFor="user_name" className="form-label">
+                <div className="mb-3 heading-edit">
+                  <label style={{fontWeight:"bold"}} htmlFor="user_name" className="form-label">
                     Username
                   </label>
                   <input
@@ -151,8 +168,8 @@ export default function Profile() {
               </div>
 
               <div className="container">
-                <div className="mb-3">
-                  <label htmlFor="user_contact" className="form-label">
+                <div className="mb-3 heading-edit">
+                  <label style={{fontWeight:"bold"}} htmlFor="user_contact " className="form-label">
                     Contact No.
                   </label>
                   <input
@@ -170,8 +187,8 @@ export default function Profile() {
               </div>
 
               <div className="container">
-                <div className="mb-3">
-                  <label htmlFor="InputEmail1" className="form-label">
+                <div className="mb-3 heading-edit">
+                  <label style={{fontWeight:"bold"}} htmlFor="InputEmail1" className="form-label">
                     Email
                   </label>
                   <input
@@ -188,16 +205,18 @@ export default function Profile() {
                 </div>
               </div>
 
-              <button
+                <div className="btn-profile">
+                <button
                 type="submit"
-                className="btn btn-dark d-grid gap-2 col-3 mx-auto my-4"
+                className="btn btn-dark  mx-auto my-4"
               >
                 Submit
               </button>
 
-              <button className="btn btn-dark" onClick={handleUpdate}>
+              <button className="btn btn-dark  mx-auto my-4" onClick={handleUpdate}>
                 Cancel
               </button>
+                </div>
             </form>
           </div>
         )}

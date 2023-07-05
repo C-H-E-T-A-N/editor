@@ -1,0 +1,19 @@
+
+.card-heading
+{
+    /* text-align: center; */
+    
+    color: #004d40;
+    filter: brightness(90%);
+    padding: 0.5rem 0 3rem 0;
+}
+
+.card{
+    background: #000;
+    border: 1px solid #eee;
+    /* text-align: center; */
+    color: #eee;
+    padding: 1rem;
+}
+
+
