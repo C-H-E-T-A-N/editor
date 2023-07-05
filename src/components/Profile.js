@@ -7,7 +7,7 @@ import '../Styles/Profile.css';
 export default function Profile() {
   const { logoutUser } = useContext(AuthContext);
   const [isUpdate, setIsUpdate] = useState(true);
-  const {logoutUser} = useContext(AuthContext);
+  
   // States to display details in the profile
   const [user_name, setUsername] = useState("");
   const [user_contact, setContact] = useState("");
