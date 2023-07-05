@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-
+import '../Styles/Login.css';
 export default function Login() {
   let { loginUser } = useContext(AuthContext);
 
@@ -11,9 +11,9 @@ export default function Login() {
         className="container mx-auto d-flex justify-content-center align-items-center col-xs-4 col-md-6 col-xl-4"
         style={{ height: "89vh" }}
       >
-        <div style={{ width: "22rem" }}>
-          <div className="card-body">
-            <h4 className="card-title text-center mb-4">Login</h4>
+        <div className="card" style={{ width: "22rem" }}>
+        
+            <h2 className="card-heading">Login</h2>
             <form onSubmit={loginUser}>
               <div className="form-outline mb-4">
                 <label className="form-label" htmlFor="form2Example1">
@@ -44,7 +44,7 @@ export default function Login() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="btn btn-primary btn-block mb-4"
+                  className="btn mb-4"
                 >
                   Log in
                 </button>
@@ -58,7 +58,7 @@ export default function Login() {
             </form>
           </div>
         </div>
-      </div>
+     
     </>
   );
 }

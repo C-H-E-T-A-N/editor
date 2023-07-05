@@ -11,6 +11,8 @@ import Dashboard from "./components/Dashboard";
 import { useState } from "react";
 import NewEditor from "./components/NewEditor";
 
+
+
 function App() {
 
   const [selectedPage, setSelectedPage] = useState("");
@@ -24,6 +26,7 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <NavBar />
+         
           <Routes>
             <Route
               path="/Dashboard"
@@ -34,20 +37,14 @@ function App() {
               }
             />
             <Route path="/Login" element={<Login />} />
+            
             <Route path="/Signup" element={<SignUp />} />
             <Route path="/Profile" element={<Profile />} />
             <Route path="/PwdChange" element={<PasswordChange />} />
-            <Route
-              path="/Create"
-              element={
-                selectedPage.id ? (
-                  <WebBuilder {...selectedPage} />
-                ) : (
-                  <NewEditor />
-                )
-              }
-            />
+            <Route path="/NewPage" element={<NewEditor />} />
+            <Route path="/EditPage" element={<WebBuilder {...selectedPage} />} />
           </Routes>
+          
         </AuthProvider>
       </BrowserRouter>
     </>

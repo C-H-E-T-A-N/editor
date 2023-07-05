@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import '../Styles/Dashboard.css';
 export default function Dashboard({ onEditPage }) {
   const handleEdit = (pageData) => {
     onEditPage(pageData);
-    navigate("/Create");
+    navigate("/EditPage");
   };
   
   const navigate = useNavigate();
@@ -57,27 +57,25 @@ export default function Dashboard({ onEditPage }) {
   }, []);
 
   return user ? (
-    <div>
+      <>
+      <h1 className='dashboard-heading mb-4'>Dashboard</h1>
+    <div className=" dashboard-container">
       {pages.map((element, index) => {
         return (
-          <div key={index}>
+          <div className="dashboard-card" key={index}>
             <div className="mx-2">
-              <div className="card my-2">
+             
                 <div className="card-body">
-                  <p className="card-title">
+                  <h4 className="dash-title">
                     {index + 1} - {pages[index].title}
-                    <span className="float-end">
+                    {/* <span className="float-end">
                       (Page ID - {pages[index].id})
-                    </span>
-                  </p>
+                    </span> */}
+                  </h4>
+                 <div className="dashbtns">
+                
                   <button
-                    className="btn btn-primary float-end mx-1"
-                    onClick={() => handleDelete(pages[index].id)}
-                  >
-                    Delete
-                  </button>
-                  <button
-                    className="btn btn-primary float-end mx-1"
+                    className="btn  mx-1"
                     onClick={() =>
                       handleEdit({
                         id: pages[index].id,
@@ -86,17 +84,26 @@ export default function Dashboard({ onEditPage }) {
                         css_content: pages[index].css_content,
                       })
                     }
-                  >
+                    >
                     Edit
                   </button>
+
+                  <button
+                    className="btn  mx-1"
+                    onClick={() => handleDelete(pages[index].id)}
+                    >
+                    Delete
+                  </button>
+                 </div>
                   {/* <PageItem pagenumber={index+1} pageid={pages[index].id} title={pages[index].title} html_content={pages[index].html_content} css_content={pages[index].css_content} /> */}
                 </div>
               </div>
             </div>
-          </div>
+         
         );
       })}
     </div>
+</>
   ) : (
     <div>
       <p>You are not logged in.</p>

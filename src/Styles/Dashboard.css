@@ -1,0 +1,56 @@
+.dashboard-heading
+{
+    text-transform: uppercase;
+    text-shadow: 1px 1px;
+    color: #004d40;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    filter: brightness(90%);
+}
+.dashboard-container
+{
+    max-width: 1140px;
+    padding-bottom: 5rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+}
+.dashboard-card
+{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background: #afe1ce;
+    border: 1px solid #eee;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    color: #eee;
+    border-radius: 5px;
+}
+
+.dash-title
+{
+    color: #004d40;
+  text-shadow: 1px 1px;
+    text-transform: uppercase;
+    padding:1rem 0;
+}
+.dashbtns
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width:920px)
+{
+    .dashboard-container
+{
+    max-width: 90%;
+    
+    margin: auto;
+  
+    grid-template-columns: 1fr;
+    
+}
+}
