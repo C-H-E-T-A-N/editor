@@ -40,7 +40,7 @@ function App() {
             <Route path="/Signup" element={<SignUp />} />
             <Route path="/Profile" element={<Profile />} />
             <Route path="/PwdChange" element={<PasswordChange />} />
-            <Route path="/NewPage" element={<NewEditor />} />
+            <Route path="/" element={<NewEditor />} />
             <Route
               path="/EditPage"
               element={<WebBuilder {...selectedPage} />}

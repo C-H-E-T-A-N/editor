@@ -12,7 +12,7 @@ export default function NavBar() {
    
       <nav className="navbar  navbar-expand-lg  navbar-dark" style={{position:"fixed",    backgroundColor: "darkslategray", boxShadow: "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset", zIndex:"999999", width:"100%", top:"0", left:"0"}}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/NewPage">
+          <Link className="navbar-brand" to="/">
             DarkTech
           </Link>
           <button
@@ -31,7 +31,7 @@ export default function NavBar() {
              
           
               <li className="nav-item">
-                <Link className="nav-link" to="/NewPage">
+                <Link className="nav-link" to="/">
                 Create
                 </Link>
               </li>

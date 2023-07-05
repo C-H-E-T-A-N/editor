@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
       setUser(jwtDecode(data.access));
       const userEmail = jwtDecode(data.access).email;
       localStorage.setItem("email", userEmail);
-      navigate("/NewPage");
+      navigate("/");
     }
   };
 
